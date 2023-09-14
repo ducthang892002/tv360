@@ -32,4 +32,9 @@ public interface API {
     Call<DataObjectUrlVideo> getlinka(
             @Query("id") String id,
             @Query("type") String type);
+
+    @GET("public/v1/composite/get-link")
+    Call<JsonElement> testlink(
+            @Query("id") String id,
+            @Query("type") String type);
 }

@@ -1,17 +1,18 @@
 package com.example.myapplication.Model;
 
 public class Banner {
-    private   int id;
+    private   String id;
     private   String name;
     private  String description;
     private  String slug;
     private  String durationStr;
     private  String resolution;
     private String coverImage;
-    private  String animationImage;
     private String type;
+    private  String animationImage;
 
-    public Banner(int id, String name, String description, String slug, String durationStr, String resolution, String coverImage, String animationImage, String type) {
+
+    public Banner(String id, String name, String description, String slug, String durationStr, String resolution, String coverImage, String type, String animationImage) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -19,15 +20,15 @@ public class Banner {
         this.durationStr = durationStr;
         this.resolution = resolution;
         this.coverImage = coverImage;
-        this.animationImage = animationImage;
         this.type = type;
+        this.animationImage = animationImage;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -79,19 +80,19 @@ public class Banner {
         this.coverImage = coverImage;
     }
 
-    public String getAnimationImage() {
-        return animationImage;
-    }
-
-    public void setAnimationImage(String animationImage) {
-        this.animationImage = animationImage;
-    }
-
     public String getType() {
         return type;
     }
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getAnimationImage() {
+        return animationImage;
+    }
+
+    public void setAnimationImage(String animationImage) {
+        this.animationImage = animationImage;
     }
 }

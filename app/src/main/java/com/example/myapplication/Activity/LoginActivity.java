@@ -67,7 +67,7 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface {
         String Username = user.getText().toString();
         String Password =   pass.getText().toString();
         apiInterface = RetrofitClient.getClient().create(API.class);
-        Call<DataObjectLogin> data = apiInterface.login(new LoginModel(Username,Password,"PASS",null,deviceInfo));
+        Call<DataObjectLogin> data = apiInterface.login(new LoginModel("0385891395","888888","PASS",null,deviceInfo));
         data.enqueue(new Callback<DataObjectLogin>() {
             @Override
             public void onResponse(Call<DataObjectLogin> call, Response<DataObjectLogin> response) {

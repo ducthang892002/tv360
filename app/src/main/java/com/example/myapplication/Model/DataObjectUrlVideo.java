@@ -1,10 +1,11 @@
 package com.example.myapplication.Model;
 
+import java.util.List;
+
 public class DataObjectUrlVideo {
     private String  message;
     private  String errorCode;
-
-    private  UrlVideo data;
+    private UrlVideo data;
 
     public DataObjectUrlVideo(String message, String errorCode, UrlVideo data) {
         this.message = message;

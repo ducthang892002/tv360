@@ -3,11 +3,11 @@ package com.example.myapplication.Model;
 import java.util.List;
 
 public class Category {
-    int id;
+    String id;
     String name,description,slug,type,itemType;
     private List<Product> content;
 
-    public Category(int id, String name, String description, String slug, String type, String itemType, List<Product> content) {
+    public Category(String id, String name, String description, String slug, String type, String itemType, List<Product> content) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -17,11 +17,11 @@ public class Category {
         this.content = content;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
