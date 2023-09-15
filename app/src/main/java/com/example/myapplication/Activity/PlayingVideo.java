@@ -54,8 +54,6 @@ public class PlayingVideo extends AppCompatActivity {
     String[] speed = {"0.25x", "0.5x", "Normal", "1.5x", "2x"};
     private boolean isShowingTrackSelectionDialog = false;
     private DefaultTrackSelector trackSelector;
-    private ImageButton exo_pause;
-    private ImageButton exo_play;
 
     ImageView fullscreen;
 
@@ -67,6 +65,7 @@ public class PlayingVideo extends AppCompatActivity {
     TextView text_speed;
 
     TextView text_quality;
+    ImageView setiing_play;
 
     StyledPlayerView styledPlayerView;
     API apiserver ;
@@ -89,16 +88,15 @@ public class PlayingVideo extends AppCompatActivity {
             @Override
             public void onResponse(Call<DataObjectUrlVideo> call, Response<DataObjectUrlVideo> response) {
                 DataObjectUrlVideo urlVideo = response.body();
-                Log.d("TAG : " + response.body(),"ok");
-                StyledPlayerView styledPlayerView = findViewById(R.id.playvideo);
+                styledPlayerView = findViewById(R.id.playvideo);
                 player = new ExoPlayer.Builder(PlayingVideo.this).build();
 
                 fullscreen = styledPlayerView.findViewById(R.id.exo_fullscreen_icon);
-                TextView info = findViewById(R.id.textView);
+                TextView info = styledPlayerView.findViewById(R.id.textView);
 //                info.setText(urlVideo.getData().);
                 progressBar = findViewById(R.id.progressBar);
 
-                ImageView setiing_play = styledPlayerView.findViewById(R.id.exo_settings_icon);
+                 setiing_play = styledPlayerView.findViewById(R.id.exo_settings_icon);
 
                 ImageView play = styledPlayerView.findViewById(R.id.pause_button);
 
@@ -270,26 +268,8 @@ public class PlayingVideo extends AppCompatActivity {
                     TrackSelectionDialog trackSelectionDialog = TrackSelectionDialog.createForTrackSelector(trackSelector,
                             /* onDismissListener= */ dismissedDialog -> isShowingTrackSelectionDialog = false);
                     trackSelectionDialog.show(getSupportFragmentManager(), /* tag= */ null);
-                    player.addListener(new Player.Listener() {
-
-                        @Override
-                        public void onTracksChanged(TrackGroupArray trackGroups, TrackSelectionArray trackSelections) {
-                            Player.Listener.super.onTracksChanged(trackGroups, trackSelections);
-
-                            Log.d("TAG: " + trackSelections.get(0).getFormat(0).height +"p" , "okg");
-                            if (trackSelections.get(0) != null) {
-                                Log.d("TAG: " + trackSelections.get(0).getFormat(0).height +"p" , "ok1");
-                                text_quality.setText(trackSelections.get(0).getFormat(0).height +"p");
-                            }
-
-
-                        }
-
-                    });
                 }
             }
-
-
         });
         dialog.show();
     }

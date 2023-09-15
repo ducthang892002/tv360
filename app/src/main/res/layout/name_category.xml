@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="Kênh TV"
-    android:padding="10dp"
-    android:textStyle="bold"
-    android:textSize="24dp"
-    android:textColor="@color/white"
-    android:id="@+id/film_model"
-    android:drawableEnd="@drawable/baseline_navigate_next_24">
+    android:orientation="horizontal">
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kênh TV"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:id="@+id/film_model"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="right|center"
+        >
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/baseline_navigate_next_24"
+            android:layout_gravity="center|right"
+            android:padding="10dp"
+            android:paddingRight="15dp"
+            android:id="@+id/film_model_loadmore"
+            android:textSize="15dp"/>
+    </LinearLayout>
+</LinearLayout>
 
-</TextView>

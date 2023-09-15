@@ -10,7 +10,8 @@
     <com.google.android.exoplayer2.ui.StyledPlayerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/playvideo"/>
+        android:id="@+id/playvideo"
+        app:controller_layout_id="@layout/custom_layer_control"/>
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
         android:layout_width="match_parent"

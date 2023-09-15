@@ -1,9 +1,11 @@
 package com.example.myapplication.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,14 +17,18 @@ import com.example.myapplication.R;
 
 public class LoadAdapter extends RecyclerView.Adapter<LoadAdapter.LoadViewHolder>{
     private HomeModel mListData;
-
-    private CategoryAdapter filmAdapter;
-
+    private  LoadMoreHomeListener loadMoreHomeListener;
     private Context context;
     public void setData( HomeModel listData, Context context){
 
         this.mListData = listData;
         this.context = context;
+        try {
+            this.loadMoreHomeListener = ((LoadAdapter.LoadMoreHomeListener)context) ;
+        }catch (ClassCastException ex)
+        {
+            throw new ClassCastException(ex.getMessage());
+        }
         notifyDataSetChanged();
     }
     @NonNull
@@ -49,6 +55,14 @@ public class LoadAdapter extends RecyclerView.Adapter<LoadAdapter.LoadViewHolder
         if(holder.textView != null)
         {
             holder.textView.setText(mListData.getName());
+            holder.loadmoreView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent();
+                    intent.putExtra("id",mListData.getId());
+                    loadMoreHomeListener.LoadMoreHomeListener(intent);
+                }
+            });
 
         }
         if(holder.rcvItem != null)
@@ -76,14 +90,20 @@ public class LoadAdapter extends RecyclerView.Adapter<LoadAdapter.LoadViewHolder
         return 0;
     }
 
-    public class LoadViewHolder extends RecyclerView.ViewHolder {
+    public static class LoadViewHolder extends RecyclerView.ViewHolder {
         private RecyclerView rcvItem;
 
         private TextView textView;
+        private ImageButton loadmoreView;
         public LoadViewHolder(@NonNull View itemView) {
             super(itemView);
             rcvItem = itemView.findViewById(R.id.rcv_film);
             textView = itemView.findViewById(R.id.film_model);
+            loadmoreView = itemView.findViewById(R.id.loadmore_home);
         }
+    }
+    public  interface  LoadMoreHomeListener
+    {
+        public  void  LoadMoreHomeListener(Intent intent);
     }
 }

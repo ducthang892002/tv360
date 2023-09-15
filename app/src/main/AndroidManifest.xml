@@ -16,7 +16,23 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.AppleTV"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Video"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Film"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.TV"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.LoadMoreProduct"
+            android:exported="false" />
+        <activity
             android:name=".Activity.PlayingVideo"
+            android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="false" />
         <activity
             android:name=".Activity.Home"

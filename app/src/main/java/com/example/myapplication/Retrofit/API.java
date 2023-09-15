@@ -33,8 +33,9 @@ public interface API {
             @Query("id") String id,
             @Query("type") String type);
 
-    @GET("public/v1/composite/get-link")
-    Call<JsonElement> testlink(
+    @GET("public/v1/vod/get-list-item-collection")
+    Call<JsonElement> getCollectionDetail(
             @Query("id") String id,
-            @Query("type") String type);
+            @Query("limit") int limit,
+            @Query("offset") int offset);
 }
