@@ -45,35 +45,35 @@ public class Home extends AppCompatActivity implements ListProductAdapter.Detail
         GetData();
         recyclerView = findViewById(R.id.rcv_home);
 
-        navigationView = findViewById(R.id.bottom_navigation);
-        navigationView.setSelectedItemId(R.id.nav_home);
-        navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                switch (item.getItemId()){
-                    case R.id.nav_home:
-                        return true;
-                    case R.id.nav_tv:
-                        startActivity(new Intent(getApplicationContext(),TV.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.nav_film:
-                        startActivity(new Intent(getApplicationContext(),Film.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.nav_video:
-                        startActivity(new Intent(getApplicationContext(),Video.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.nav_apple:
-                        startActivity(new Intent(getApplicationContext(),AppleTV.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                }
-                return false;
-            }
-        });
+//        navigationView = findViewById(R.id.bottom_navigation);
+//        navigationView.setSelectedItemId(R.id.nav_home);
+//        navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+//            @Override
+//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//
+//                switch (item.getItemId()){
+//                    case R.id.nav_home:
+//                        return true;
+//                    case R.id.nav_tv:
+//                        startActivity(new Intent(getApplicationContext(),TV.class));
+//                        overridePendingTransition(0,0);
+//                        return true;
+//                    case R.id.nav_film:
+//                        startActivity(new Intent(getApplicationContext(),Film.class));
+//                        overridePendingTransition(0,0);
+//                        return true;
+//                    case R.id.nav_video:
+//                        startActivity(new Intent(getApplicationContext(),Video.class));
+//                        overridePendingTransition(0,0);
+//                        return true;
+//                    case R.id.nav_apple:
+//                        startActivity(new Intent(getApplicationContext(),AppleTV.class));
+//                        overridePendingTransition(0,0);
+//                        return true;
+//                }
+//                return false;
+//            }
+//        });
     }
 
     private void GetData() {

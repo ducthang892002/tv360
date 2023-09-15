@@ -99,7 +99,7 @@ public class LoadAdapter extends RecyclerView.Adapter<LoadAdapter.LoadViewHolder
             super(itemView);
             rcvItem = itemView.findViewById(R.id.rcv_film);
             textView = itemView.findViewById(R.id.film_model);
-            loadmoreView = itemView.findViewById(R.id.loadmore_home);
+            loadmoreView = itemView.findViewById(R.id.film_model_loadmore);
         }
     }
     public  interface  LoadMoreHomeListener

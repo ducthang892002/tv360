@@ -24,7 +24,9 @@
             android:padding="10dp"
             android:paddingRight="15dp"
             android:id="@+id/film_model_loadmore"
-            android:textSize="15dp"/>
+            android:textSize="15dp"
+
+            />
     </LinearLayout>
 </LinearLayout>
 

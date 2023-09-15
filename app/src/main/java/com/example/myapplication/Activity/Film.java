@@ -23,7 +23,7 @@ public class Film extends AppCompatActivity {
         navigationView.setSelectedItemId(R.id.nav_home);
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            public boolean onNavigationItemSelected(@NonNull final MenuItem item) {
 
                 switch (item.getItemId()){
                     case R.id.nav_home:
